@@ -1,0 +1,65 @@
+﻿<Window x:Class="RetakeLab.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RetakeLab"
+        mc:Ignorable="d"
+                Title="AdoenME!" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Width="5" Background="Gray" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndNext" />
+
+        <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Expander Header="1. Choose image!" Margin="10">
+                    <StackPanel>
+                        <Button x:Name="OpenImageButton" Content="Open Image" Click="OpenImage_Click"/>
+                    </StackPanel>
+                </Expander>
+
+                <Expander Header="2. Choose Sticker!" Margin="10">
+                    <StackPanel>
+                        <Slider x:Name="StickerSize" Minimum="20" Maximum="100" Value="50" Margin="10"/>
+                        <ListView x:Name="ImageListView" SelectionChanged="ImageListView_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="200">
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding}" Width="50" Height="50" Stretch="Uniform" Margin="5"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </Expander>
+
+                <Expander Header="3. Save your Ador(n)able Image!" Margin="10">
+                    <StackPanel>
+                        <Button x:Name="SaveImageButton" Content="Save Image" Click="SaveImage_Click"/>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Grid.Column="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <Canvas x:Name="ImageContainer" Background="White"/>
+            </ScrollViewer>
+
+            <Canvas x:Name="StickerCanvas" Grid.Column="1" Panel.ZIndex="1"/>
+        </Grid>
+    </Grid>
+</Window>
+

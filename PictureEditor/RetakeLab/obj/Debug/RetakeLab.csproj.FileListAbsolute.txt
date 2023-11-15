@@ -1,0 +1,6 @@
+C:\Users\Rog Tuf\source\repos\RetakeLab\RetakeLab\obj\Debug\RetakeLab.csproj.AssemblyReference.cache
+C:\Users\Rog Tuf\source\repos\RetakeLab\RetakeLab\obj\Debug\RetakeLab.csproj.SuggestedBindingRedirects.cache
+C:\Users\Rog Tuf\source\repos\RetakeLab\RetakeLab\obj\Debug\MainWindow.g.cs
+C:\Users\Rog Tuf\source\repos\RetakeLab\RetakeLab\obj\Debug\App.g.cs
+C:\Users\Rog Tuf\source\repos\RetakeLab\RetakeLab\obj\Debug\RetakeLab_MarkupCompile.cache
+C:\Users\Rog Tuf\source\repos\RetakeLab\RetakeLab\obj\Debug\RetakeLab_MarkupCompile.lref
